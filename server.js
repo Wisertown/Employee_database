@@ -26,6 +26,14 @@ var UserSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
+	date_of_hire: {
+		type: String,
+		required: true,
+	},
+	job_title: {
+		type: String,
+		required: true,
+	},
 });
 mongoose.model('User', UserSchema);
 var User = mongoose.model('User');
@@ -40,7 +48,9 @@ app.post('/users', function(req, res){
 	userInstance = new User({
 		first_name: req.body.first_name,
 		last_name: req.body.last_name,
-		email: req.body.email
+		email: req.body.email,
+		date_of_hire: req.body.date_of_hire,
+		job_title: req.body.job_title
 	})
 	userInstance.save(function(err){
 		res.redirect('/');

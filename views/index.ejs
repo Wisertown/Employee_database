@@ -19,14 +19,29 @@
 		<input type="text" name="job_title">
 		<input type="submit" value="add user">
 	</form>
-
+	<table>
 	<% for(index in users){ %>
-		<%= users[index].first_name %>
-		<%= users[index].last_name %>,
-		<%= users[index].email %>
-		<a href="/users/<%= users[index]._id %>/delete">delete</a>
-		<a href="/users/<%= users[index]._id %>/edit">edit</a>
+		<tr>			
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Email</th>
+			<th>Date Of Hire</th>
+			<th>Job title</th>
+			<th>Delete</th>
+			<th>Edit</th>
+		</tr>
+		<tr>
+			<td><%= users[index].first_name %></td>
+			<td><%= users[index].last_name %></td>
+			<td><%= users[index].email %></td>
+			<td><%= users[index].date_of_hire %></td>
+			<td><%= users[index].job_title %></td>
+			<td><a href="/users/<%= users[index]._id %>/delete">delete</a></td>
+			<td><a href="/users/<%= users[index]._id %>/edit">edit</a></td>
+		</tr>
+
 		<br>
 	<% } %>
+	</table>
 </body>
 </html>
