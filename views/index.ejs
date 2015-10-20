@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>index page</title>
+</head>
+<body>
+	<h1>Employee Records</h1>
+	<form method='post' action='/users'>
+		<label for="first_name">First Name:</label>
+		<input type="text" name='first_name'>
+		<label for="last_name">Last Name:</label>
+		<input type="text" name='last_name'>
+		<label for="email">Email:</label>
+		<input type="text" name='email'>
+		<label for="date_of_hire">Date of Hire:</label>
+		<input type="date" name='date_of_hire'>
+		<label for="job_title">Job Title:</label>
+		<input type="text" name="job_title">
+		<input type="submit" value="add user">
+	</form>
+
+	<% for(index in users){ %>
+		<%= users[index].first_name %>
+		<%= users[index].last_name %>,
+		<%= users[index].email %>
+		<a href="/users/<%= users[index]._id %>/delete">delete</a>
+		<a href="/users/<%= users[index]._id %>/edit">edit</a>
+		<br>
+	<% } %>
+</body>
+</html>

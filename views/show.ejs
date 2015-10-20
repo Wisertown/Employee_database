@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Show</title>
+</head>
+<body>
+	<h1>Show</h1>
+	<%= user.first_name %>
+	<%= user.last_name %>
+	<h3>Change User Details</h3>
+	<form method='post' action='/users/<%= user._id %>/update'>
+		<input type="text" name='first_name' value="<%= user.first_name %>">
+		<input type="text" name='last_name' value="<%= user.last_name %>">
+		<input type="text" name='email' value="<%= user.email %>">
+		<input type="submit" value="add user">
+	</form>
+	<p><a href="/">Goback</a></p>
+</body>
+</html>
